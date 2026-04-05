@@ -1,3 +1,5 @@
 const welcome = (message) => {
-    console.log(`${message}`);
+    return message;
 }
+
+export default welcome;
