@@ -2,7 +2,7 @@
 import welcome from '../src/welcome.js'
 import { getUserName, helloUser }  from '../src/cli.js';
 
-welcome('Welcome to the Brain Games!');
-const userName=getUserName('May I have your name?');
+welcome();
+const userName=getUserName();
 helloUser(userName);
 

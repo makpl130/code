@@ -1,5 +1,6 @@
-const welcome = (message) => {
-    console.log(`${message}`);
+const welcome = () => {
+    console.log(`Welcome to the Brain Games`);
 }
+
 
 export default welcome;
