@@ -31,7 +31,7 @@ for (let i=0; i<3; i += 1) {
   sendMessage('Correct!');
 };
 
-checkGameResult(gameResult);
+checkGameResult(gameResult, userName);
 
 
 

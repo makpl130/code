@@ -34,7 +34,7 @@ for (let i=0; i<3; i += 1) {
   }
 
   sendMessage(`Question: ${question}`);
-  const userAnswer=getAnswer(`Your answer: `);
+  const userAnswer=Number(getAnswer(`Your answer: `));
 
   if ( userAnswer !== rigthAnswer ) {
     sendMessage(`${userAnswer} is wrong answer ;(. Correct answer was ${rigthAnswer}`);
@@ -44,4 +44,4 @@ for (let i=0; i<3; i += 1) {
   sendMessage('Correct!');
 };
 
-checkGameResult(gameResult);
+checkGameResult(gameResult, userName);
