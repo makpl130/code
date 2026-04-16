@@ -10,3 +10,5 @@
 [Asciinema demo-05 after 5th stage] (https://asciinema.org/a/ABgUzSYPqc6ohM7w)
 ###
 [Asciinema demo-06 after 6th stage] (https://asciinema.org/a/rArUF6etOCxFidJ8)
+###
+[Asciinema demo-07 after 7th stage] (https://asciinema.org/a/8bnu4kO9a0dZ6UPu)
