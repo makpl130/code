@@ -5,4 +5,3 @@ import { getUserName, helloUser }  from '../src/cli.js';
 welcome();
 const userName=getUserName();
 helloUser(userName);
-

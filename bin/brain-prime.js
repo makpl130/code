@@ -2,20 +2,18 @@
 import { welcome } from '../src/welcome.js'
 import { getUserName, helloUser }  from '../src/cli.js';
 import { getAnswer, sendMessage } from '../src/interact.js'
-import { randomNumberFromRange, isEven } from '../src/math.js';
+import { randomNumberFromRange, isPrime } from '../src/math.js';
 import { checkGameResult, userToBoolAnswer } from '../src/logic.js';
-
-
 
 welcome();
 const userName=getUserName();
 helloUser(userName);
-sendMessage(`Answer "yes" if the number is even, otherwise answer "no"`);
+sendMessage(`Answer "yes" if given number is prime. Otherwise answer "no".`);
 
 let gameResult='win';
 for (let i=0; i<3; i += 1) {
   const randomNumber=randomNumberFromRange(100);
-  const boolRigthAnswer=isEven(randomNumber);
+  const boolRigthAnswer=isPrime(randomNumber);
   const stringAnswer = boolRigthAnswer === true ? "yes" : "no";
   sendMessage(`Question: ${randomNumber}`);
   const userAnswer=getAnswer(`Your answer: `);
