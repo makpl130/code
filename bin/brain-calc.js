@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import welcome from '../src/welcome.js'
+import { welcome } from '../src/welcome.js'
 import { getUserName, helloUser }  from '../src/cli.js';
 import { getAnswer, sendMessage } from '../src/interact.js'
 import { randomNumberFromRange } from '../src/math.js';

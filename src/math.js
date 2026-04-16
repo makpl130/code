@@ -1,7 +1,4 @@
 const randomNumberFromRange = (multiplier) => {
-//  const now = new Date();
-//  const seed = (now.getHours() * 3600) + (now.getMinutes() * 60) + now.getSeconds();
-// const randomNumber=Math.floor(Math.random()*multiplier*seed/86400);
   const randomNumber=Math.floor(Math.random()*multiplier);
   return randomNumber;
 }

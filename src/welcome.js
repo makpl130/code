@@ -3,4 +3,4 @@ const welcome = () => {
 }
 
 
-export default welcome;
+export {welcome};
