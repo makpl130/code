@@ -1,5 +1,8 @@
+import crypto from 'crypto';
+
 const randomNumberFromRange = (multiplier) => {
-  const randomNumber=Math.floor(Math.random()*multiplier);
+const randomNumber=crypto.randomInt(multiplier)+1
+//    const randomNumber=Math.floor(Math.random()*multiplier);
   return randomNumber;
 }
 
