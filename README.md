@@ -20,3 +20,5 @@ To install Brain Games you need to run npm install brain-games
 [Asciinema demo-08 after 8th stage] (https://asciinema.org/a/MYrqMotGSPYfLJ1F)
 ###
 [Asciinema demo-09 after 9th stage] (https://asciinema.org/a/ygOa1digCoT00y1Q)
+###
+After renaming project
