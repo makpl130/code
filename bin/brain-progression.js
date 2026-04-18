@@ -13,7 +13,7 @@ sendMessage(`What number is missing in the progression?`);
 
 let gameResult='win';
 for (let i=0; i<3; i += 1) {
-  const progressionLength = 10 - randomNumberFromRange(6);
+  const progressionLength = 10 - randomNumberFromRange(5);
   const progressionStart = randomNumberFromRange(50);
   const progressionIncrement = randomNumberFromRange(10);
   let progressionArray=[];
@@ -22,7 +22,7 @@ for (let i=0; i<3; i += 1) {
     element = progressionStart+progressionIncrement*j;
     progressionArray[j] = element.toString();
   }
-  const secretElementPosition = randomNumberFromRange(progressionLength);
+  const secretElementPosition = randomNumberFromRange(progressionLength-1);
   const secretElement=Number(progressionArray[secretElementPosition]);
   progressionArray[secretElementPosition] = '..';
   let question = '';
