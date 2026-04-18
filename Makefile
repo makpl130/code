@@ -12,3 +12,6 @@ publish:				# Publish package
 
 lint:					# run npx eslint .
 			npx eslint .
+
+lint-fix:				# try to fix eslint errors/warnings
+			npx eslint . --fix

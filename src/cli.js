@@ -1,12 +1,12 @@
-import readlineSync from 'readline-sync';
+import readlineSync from 'readline-sync'
 
 const getUserName = () => {
-    const userName = readlineSync.question('May I have your name? ');
-    return userName;
+  const userName = readlineSync.question('May I have your name? ')
+  return userName
 }
 
 const helloUser = (userName) => {
-    console.log(`Hello, ${userName}!`);
+  console.log(`Hello, ${userName}!`)
 }
 
-export {getUserName, helloUser};
+export { getUserName, helloUser }

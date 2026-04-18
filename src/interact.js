@@ -1,12 +1,12 @@
-import readlineSync from 'readline-sync';
+import readlineSync from 'readline-sync'
 
 const getAnswer = (question) => {
-    const userAnswer = readlineSync.question(`${question} `);
-    return userAnswer;
+  const userAnswer = readlineSync.question(`${question} `)
+  return userAnswer
 }
 
 const sendMessage = (message) => {
-    console.log(`${message}`);
+  console.log(`${message}`)
 }
 
-export {getAnswer, sendMessage}
+export { getAnswer, sendMessage }
