@@ -15,7 +15,7 @@ let gameResult='win';
 for (let i=0; i<3; i += 1) {
   const randomNumber1=randomNumberFromRange(21);
   const randomNumber2=randomNumberFromRange(21);
-  const randomAction=randomNumberFromRange(3);
+  const randomAction=randomNumberFromRange(2);
   let question;
   let rigthAnswer;
   switch (randomAction) {
