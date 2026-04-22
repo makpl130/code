@@ -34,4 +34,4 @@ const brainEven = () => {
   checkGameResult(gameResult, userName)
 }
 
-export default brainEven
+export { brainEven }

@@ -38,4 +38,4 @@ const brainGCD = () => {
   checkGameResult(gameResult, userName)
 }
 
-export default brainGCD
+export { brainGCD }

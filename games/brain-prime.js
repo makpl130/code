@@ -34,4 +34,4 @@ const brainPrime = () => {
   checkGameResult(gameResult, userName)
 }
 
-export default brainPrime
+export { brainPrime }

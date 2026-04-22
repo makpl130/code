@@ -48,4 +48,4 @@ const brainCalc = () => {
   checkGameResult(gameResult, userName)
 }
 
-export default brainCalc
+export { brainCalc }

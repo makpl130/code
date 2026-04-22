@@ -8,4 +8,4 @@ const brainGames = () => {
   helloUser(userName)
 }
 
-export default brainGames
+export { brainGames }

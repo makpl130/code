@@ -45,4 +45,4 @@ const brainProgression = () => {
   checkGameResult(gameResult, userName)
 }
 
-export default brainProgression
+export { brainProgression }
