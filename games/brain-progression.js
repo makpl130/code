@@ -1,16 +1,9 @@
-import { welcome } from '../src/welcome.js'
-import { getUserName, helloUser } from '../src/cli.js'
-import { getAnswer, sendMessage } from '../src/interact.js'
 import { randomNumberFromRange } from '../src/math.js'
-import { checkGameResult } from '../src/logic.js'
+import { gameEngine } from '../src/template.js'
 
-const brainProgression = () => {
-  welcome()
-  const userName = getUserName()
-  helloUser(userName)
-  sendMessage(`What number is missing in the progression?`)
+const generateGameData = () => {
+  let data = [[], [], []]
 
-  let gameResult = 'win'
   for (let i = 0; i < 3; i += 1) {
     const progressionLength = 10 - randomNumberFromRange(5)
     const progressionStart = randomNumberFromRange(50)
@@ -28,20 +21,17 @@ const brainProgression = () => {
     for (let j = 0; j < progressionLength; j += 1) {
       question += `${progressionArray[j]} `
     };
+    const answer = secretElement.toString()
+    data[i].push(question)
+    data[i].push(answer)
+  }
+  return data
+}
 
-    sendMessage(`Question: ${question}`)
-    const userAnswer = Number(getAnswer(`Your answer: `))
-
-    if (userAnswer !== secretElement) {
-      sendMessage(`${userAnswer} is wrong answer ;(. Correct answer was ${secretElement}`)
-      gameResult = 'fail'
-      break
-    };
-
-    sendMessage('Correct!')
-  };
-
-  checkGameResult(gameResult, userName)
+const brainProgression = () => {
+  const gameQuestion = `What number is missing in the progression?`
+  const gameData = generateGameData()
+  gameEngine (gameQuestion, gameData)
 }
 
 export { brainProgression }

@@ -1,40 +1,31 @@
-import { welcome } from '../src/welcome.js'
-import { getUserName, helloUser } from '../src/cli.js'
-import { getAnswer, sendMessage } from '../src/interact.js'
+import { gameEngine } from '../src/template.js'
 import { findGCD, randomNumberFromRange } from '../src/math.js'
-import { checkGameResult } from '../src/logic.js'
 
-const brainGCD = () => {
-  welcome()
-  const userName = getUserName()
-  helloUser(userName)
-  sendMessage(`Find the greatest common divisor of given numbers.`)
-
-  let gameResult = 'win'
+const generateGameData = () => {
+  let data = [[], [], []]
+  let randomNumber1
+  let randomNumber2
+  let question
+  let answer
   for (let i = 0; i < 3; i += 1) {
-    let randomNumber1
-    let randomNumber2
     while (randomNumber1 === randomNumber2) {
       randomNumber1 = (randomNumberFromRange(78) + 1)
       randomNumber2 = Math.floor((randomNumber1 * randomNumberFromRange(3) / 3
         + randomNumber1 * randomNumberFromRange(7) / 4))
     }
-    const question = `${randomNumber1} ${randomNumber2}`
-    const rigthAnswer = findGCD(randomNumber1, randomNumber2)
+    question = `${randomNumber1} ${randomNumber2}`
+    answer = findGCD(randomNumber1, randomNumber2).toString()
+    data[i].push(question)
+    data[i].push(answer)
+    randomNumber1 = randomNumber2
+  }
+  return data
+}
 
-    sendMessage(`Question: ${question}`)
-    const userAnswer = Number(getAnswer(`Your answer: `))
-
-    if (userAnswer !== rigthAnswer) {
-      sendMessage(`${userAnswer} is wrong answer ;(. Correct answer was ${rigthAnswer}`)
-      gameResult = 'fail'
-      break
-    };
-
-    sendMessage('Correct!')
-  };
-
-  checkGameResult(gameResult, userName)
+const brainGCD = () => {
+  const gameQuestion = `Find the greatest common divisor of given numbers.`
+  const gameData = generateGameData()
+  gameEngine (gameQuestion, gameData)
 }
 
 export { brainGCD }
