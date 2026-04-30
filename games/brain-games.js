@@ -1,7 +1,7 @@
-import { welcome } from '../src/welcome.js'
+import { userWelcomeAndGetUsername } from '../src/welcome.js'
 
 const brainGames = () => {
-  welcome()
+  userWelcomeAndGetUsername()
 }
 
 export { brainGames }

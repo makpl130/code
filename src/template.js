@@ -1,19 +1,27 @@
 import { getAnswer, sendMessage } from '../src/interact.js'
+import { userWelcomeAndGetUsername } from './welcome.js'
 
-const gameEngine = (question, answer) => {
+const gameEngine = (gameQuestion, questions, answers) => {
+  const userName = userWelcomeAndGetUsername()
+  console.log(gameQuestion)
   let gameResult = 'win'
   for (let i = 0; i < 3; i += 1) {
-    sendMessage(`Question: ${question[i]}`)
+    sendMessage(`Question: ${questions[i]}`)
     const userAnswer = getAnswer(`Your answer: `).toString()
-    if (answer[i].toString() !== userAnswer) {
-      sendMessage(`${userAnswer} is wrong answer ;(. Correct answer was ${answer[i]}`)
+    if (answers[i].toString() !== userAnswer) {
+      sendMessage(`${userAnswer} is wrong answer ;(. Correct answer was ${answers[i]}`)
       gameResult = 'fail'
       break
     };
     sendMessage('Correct!')
   }
 
-  return gameResult
+  if (gameResult === 'win') {
+    sendMessage(`Congratulations, ${userName}!`)
+  }
+  else {
+    sendMessage(`Let's try again, ${userName}!`)
+  }
 }
 
 export { gameEngine }
