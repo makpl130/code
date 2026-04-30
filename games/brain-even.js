@@ -1,35 +1,21 @@
-#!/usr/bin/env node
 import { welcome } from '../src/welcome.js'
-import { getUserName, helloUser } from '../src/cli.js'
-import { getAnswer, sendMessage } from '../src/interact.js'
+import { sendMessage } from '../src/interact.js'
 import { randomNumberFromRange, isEven } from '../src/math.js'
-import { checkGameResult, userToBoolAnswer } from '../src/logic.js'
+import { checkGameResult } from '../src/logic.js'
+import { gameEngine } from '../src/template.js'
 
 const brainEven = () => {
-  welcome()
-  const userName = getUserName()
-  helloUser(userName)
+  const userName = welcome()
   sendMessage(`Answer "yes" if the number is even, otherwise answer "no"`)
-
-  let gameResult = 'win'
+  let question = []
+  let answer = []
   for (let i = 0; i < 3; i += 1) {
-    const randomNumber = randomNumberFromRange(100)
-    const boolRigthAnswer = isEven(randomNumber)
-    const stringAnswer = boolRigthAnswer === true ? 'yes' : 'no'
-    sendMessage(`Question: ${randomNumber}`)
-    const userAnswer = getAnswer(`Your answer: `)
-    if (userAnswer !== 'yes' && userAnswer !== 'no') {
-      gameResult = 'fail'
-      break
-    };
+    question[i] = randomNumberFromRange(100)
+    const boolRigthAnswer = isEven(question[i])
+    answer[i] = boolRigthAnswer === true ? 'yes' : 'no'
+  }
 
-    if (boolRigthAnswer !== userToBoolAnswer(userAnswer)) {
-      sendMessage(`${userAnswer} is wrong answer ;(. Correct answer was ${stringAnswer}`)
-      gameResult = 'fail'
-      break
-    };
-    sendMessage('Correct!')
-  };
+  const gameResult = gameEngine (question, answer)
 
   checkGameResult(gameResult, userName)
 }
